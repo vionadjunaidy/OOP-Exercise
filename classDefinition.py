@@ -3,8 +3,18 @@ class Food:
         self.__name = name
         self.__amount = amount 
         self.__price = 0
-        self.__cost = 0
+        self.__cost = self.calculateCostVD()
         self.__PriceListVD()
+        
+
+    def getName(self):
+        return self.__name
+    
+    def getAmount(self):
+        return self.__amount
+    
+    def getPrice(self):
+        return self.__price
 
     def __PriceListVD (self):
         if self.__name == "Dry Cured Iberian Ham":
@@ -31,6 +41,6 @@ class Food:
         else:
             self.__price = 0.00
     
-    def calculateCostVD (self):
+    def calculateCostVD(self):
         self.__cost = self.__amount * self.__price
         return self.__cost
